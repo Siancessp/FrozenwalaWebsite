@@ -154,7 +154,7 @@ function CartDetails() {
                 }}
               >
                 <img
-                  src={`http://app.frozenwala.com/media/${item.product_image}`}
+                  src={`https://app.frozenwala.com/media/${item.product_image}`}
 
                   alt={item.name}
                   style={{

@@ -21,7 +21,7 @@ function LoginOTP() {
         };
         console.log(body);
         const response = await axios.post(
-          "http://app.frozenwala.com/api/login/",
+          "https://app.frozenwala.com/api/login/",
           body
         );
         // console.log("Logged in");
@@ -59,7 +59,7 @@ function LoginOTP() {
         <div className="container">
           <a
             className="navbar-brand d-inline-flex"
-            href="http://app.frozenwala.com/"
+            href="https://app.frozenwala.com/"
           >
             <img
               className="d-inline-block"

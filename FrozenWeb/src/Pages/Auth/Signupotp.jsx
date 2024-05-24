@@ -23,7 +23,7 @@ function Signupotp() {
         };
         console.log(body);
         const response = await axios.post(
-          "http://app.frozenwala.com/api/register/",
+          "https://app.frozenwala.com/api/register/",
           body
         );
         console.log("Logged in");
@@ -57,7 +57,7 @@ function Signupotp() {
         <div className="container">
           <a
             className="navbar-brand d-inline-flex"
-            href="http://app.frozenwala.com/"
+            href="https://app.frozenwala.com/"
           >
             <img
               className="d-inline-block"

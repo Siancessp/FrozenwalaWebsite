@@ -41,7 +41,7 @@ function Product({ categoryId, refreshCart }) {
         setProducts(response.data);
       } else {
         const response = await axios.get(
-          `http://app.frozenwala.com/api/api/category/product-all/?category_id=${categoryId}`
+          `https://app.frozenwala.com/api/api/auth/category/product-all/?category_id=${categoryId}`
         );
         setProducts(response.data);
       }
@@ -57,7 +57,7 @@ function Product({ categoryId, refreshCart }) {
         const response = await Api.get(`product-all/`);
         setProducts(response.data);
       } else {
-        const response = await axios.get(`http://app.frozenwala.com/api/api/product-all/`);
+        const response = await axios.get(`https://app.frozenwala.com/api/api/auth/product-all/`);
         setProducts(response.data);
       }
     } catch (error) {
@@ -178,7 +178,7 @@ function Product({ categoryId, refreshCart }) {
                         width: "100%",
                         borderRadius: 20,
                       }}
-                      src={`http://app.frozenwala.com/${product.item_photo}`}
+                      src={`https://app.frozenwala.com/${product.item_photo}`}
                       alt={product.title}
                     />
                     {product.stock === 0 && (

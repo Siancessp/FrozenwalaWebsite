@@ -29,7 +29,7 @@ function Popular({ refreshCart }) {
         const response = await Api.get("most-popular/");
         setGetProduct(response.data);
       } else {
-        const response = await axios.get("http://app.frozenwala.com/api/api/auth/most-popular/");
+        const response = await axios.get("https://app.frozenwala.com/api/api/auth/most-popular/");
         setGetProduct(response.data);
       }
     } catch (error) {

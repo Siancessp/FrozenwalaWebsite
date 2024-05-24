@@ -51,7 +51,7 @@ function Signup() {
         <div className="container">
           <a
             className="navbar-brand d-inline-flex"
-            href="http://app.frozenwala.com/"
+            href="https://app.frozenwala.com/"
           >
             <img
               className="d-inline-block"

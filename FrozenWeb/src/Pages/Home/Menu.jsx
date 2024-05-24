@@ -22,7 +22,7 @@ function Menu({ onSelectCategory }) {
         setCategories(response.data);
       } else {
         // If uid does not exist, fetch categoriesItem/ API
-        const response = await axios.get(`http://app.frozenwala.com/api/api/auth/categories/`);
+        const response = await axios.get(`https://app.frozenwala.com/api/api/auth/categories/`);
         setCategories(response.data);
       }
     } catch (error) {

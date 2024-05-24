@@ -150,9 +150,6 @@ function Home() {
 
         <How />
 
-        {/* <Popular /> */}
-        
-
       <ParentComponent refRestCart={refRestCart}/>
 
        {/* <SearchByFood/> */}

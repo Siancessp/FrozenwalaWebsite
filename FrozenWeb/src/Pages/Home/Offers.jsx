@@ -35,7 +35,7 @@ function Offers() {
                   <a href={`/offer-details/${offer.id}`}>
                     <div className="card card-span h-100">
                       <div className="position-relative">
-                        <img className="img-fluid rounded-3 w-100" src={`http://app.frozenwala.com/${offer.image}`} alt={offer.coupon} />
+                        <img className="img-fluid rounded-3 w-100" src={`https://app.frozenwala.com/${offer.image}`} alt={offer.coupon} />
                         <div className="card-actions">
                           <div className="badge badge-foodwagon bg-primary p-4">
                             <div className="d-flex flex-between-center">

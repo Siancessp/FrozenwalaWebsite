@@ -480,7 +480,7 @@ const CheckoutPage = () => {
             >
               <div style={{ display: "flex", width: "60%", borderRadius: 10 }}>
                 <img
-                  src={`http://app.frozenwala.com/media/${item.product_image}`}
+                  src={`https://app.frozenwala.com/media/${item.product_image}`}
                   alt={item.name}
                   style={{ width: "70px", aspectRatio: 1, borderRadius: 10 }}
                 />
