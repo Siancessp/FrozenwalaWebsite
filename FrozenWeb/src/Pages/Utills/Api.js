@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseUrl = 'http://app.frozenwala.com/api/';
+const baseUrl = 'http://app.frozenwala.com/api/api/';
 
 const get = async endPoints => {
   const accessToken = localStorage.getItem('access_token');

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Api from "../Utills/Api";
+import axios from "axios";
 
 function Menu({ onSelectCategory }) {
   const [categories, setCategories] = useState([]);
@@ -10,16 +11,26 @@ function Menu({ onSelectCategory }) {
   useEffect(() => {
     getMenu();
   }, []);
+  const uid = localStorage.getItem("user_id");
+
 
   const getMenu = async () => {
     try {
-      const response = await Api.get(`categories/`);
-      setCategories(response.data);
+      if (uid) {
+        // If uid exists, fetch categories/ API
+        const response = await Api.get(`categories/`);
+        setCategories(response.data);
+      } else {
+        // If uid does not exist, fetch categoriesItem/ API
+        const response = await axios.get(`http://app.frozenwala.com/api/api/auth/categories/`);
+        setCategories(response.data);
+      }
     } catch (error) {
-      setError("Error fetching menu. Please try again later.");
+      // setError("Error fetching menu. Please try again later.");
       console.error("Error fetching menu:", error);
     }
   };
+  
 
   const handleClick = async (categoryId) => {
     setSelectedCategory(categoryId);

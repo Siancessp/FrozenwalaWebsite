@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Api from "../Utills/Api";
+import axios from "axios";
 
 function Product({ categoryId, refreshCart }) {
   const [products, setProducts] = useState([]);
@@ -32,23 +33,38 @@ function Product({ categoryId, refreshCart }) {
   const getProducts = async (categoryId) => {
     console.log(categoryId);
     try {
-      const response = await Api.get(
-        `category/product-all/?category_id=${categoryId}`
-      );
-      setProducts(response.data);
-      console.log(response.data);
+      if (uid) {
+        
+        const response = await Api.get(
+          `category/product-all/?category_id=${categoryId}`
+        );
+        setProducts(response.data);
+      } else {
+        const response = await axios.get(
+          `http://app.frozenwala.com/api/api/category/product-all/?category_id=${categoryId}`
+        );
+        setProducts(response.data);
+      }
     } catch (error) {
       console.error("Error fetching products:", error);
     }
   };
+  
   const getAllProducts = async () => {
     try {
-      const response = await Api.get(`product-all/`);
-      setProducts(response.data);
+      if (uid) {
+        // If uid exists, fetch product-all/ API
+        const response = await Api.get(`product-all/`);
+        setProducts(response.data);
+      } else {
+        const response = await axios.get(`http://app.frozenwala.com/api/api/product-all/`);
+        setProducts(response.data);
+      }
     } catch (error) {
       console.error("Error fetching all products:", error);
     }
   };
+  
 
 
   const getCartItems = async () => {

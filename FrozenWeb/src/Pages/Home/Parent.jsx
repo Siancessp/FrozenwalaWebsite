@@ -12,9 +12,9 @@ function ParentComponent({refRestCart}) {
 
   return (
     <div>
+      <Popular refreshCart={refRestCart}/>
       <Menu onSelectCategory={handleCategorySelect} />
       <Product categoryId={selectedCategoryId} refreshCart={refRestCart}/>
-      <Popular refreshCart={refRestCart}/>
     </div>
   );
 }

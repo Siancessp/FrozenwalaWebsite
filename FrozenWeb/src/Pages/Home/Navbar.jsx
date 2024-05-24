@@ -21,9 +21,13 @@ function Navbar({refreshCart}) {
       navigate("/login");
     }
   };
+
   const handleClickCart = () => {
-     navigate("/cart"); 
-   
+    if (isLoggedIn) {
+      navigate("/cart"); 
+    } else {
+      navigate("/login");
+    }
   };
 
   const toggleNavbar = () => {
@@ -96,7 +100,7 @@ function Navbar({refreshCart}) {
                 </button>
                 <button
                   className="btn btn-white  text-warning"
-                  type="submit"
+                  type="button"
                   onClick={handleClickCart}
                 >
                   <FaShoppingCart fontSize="24px" />
